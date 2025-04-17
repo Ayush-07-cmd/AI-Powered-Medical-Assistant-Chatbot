@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ disease_name }} - Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container animate">
+        <h2>🩺 {{ disease_name }}</h2>
+        <p>{{ info.description }}</p>
+
+        <h3>🛡️ Precautions</h3>
+        <ul>
+            {% for item in info.precautions %}
+                <li>• {{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>🌿 How to Feel Better</h3>
+        <ul>
+            {% for item in info.feel_better %}
+                <li>• {{ item }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/" class="back-button">← Back to Symptom Checker</a>
+    </div>
+</body>
+</html>

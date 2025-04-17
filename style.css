@@ -1,0 +1,165 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #c9e4f6, #fefefe);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+/* Container */
+.container {
+    max-width: 700px;       /* Increase from 500px or similar */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.main-content {
+    flex: 1;
+    overflow-y: auto; /* Enables vertical scroll if needed */
+    padding-bottom: 20px; /* Space for footer if sticky */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.doctor-img {
+    width: 200px;         /* Medium size */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;  /* Center and space below */
+    border-radius: 20px;  /* Rounded corners (optional) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease;
+}
+
+.doctor-img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+@keyframes pop {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.subtitle {
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.checkbox {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.checkbox input[type="checkbox"] {
+    width: 20px;       /* Default is usually 14-16px */
+    height: 20px;
+    margin-right: 10px;
+    accent-color: #4CAF50; /* Optional: makes the checkbox green */
+    transform: scale(1.2); /* Slight zoom for visual appeal */
+}
+input[type="checkbox"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.icon {
+    width: 40px;       /* Previously maybe 24-32px */
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 8px; /* optional: make it smooth */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* soft shadow */
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.1); /* zoom effect on hover */
+}
+/* Button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Result */
+.result {
+    margin-top: 25px;
+    background: #e7ffe7;
+    border-left: 6px solid #28a745;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #1b5e20;
+    font-size: 17px;
+    animation: slideUp 1s ease-in;
+}
+/* Layout to make footer stay at bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Footer Styling */
+.footer {
+    background: #f5f5f5;
+    text-align: center;
+    padding: 12px 0;
+    color: #555;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+}
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

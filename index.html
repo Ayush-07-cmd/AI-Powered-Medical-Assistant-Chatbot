@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Symptom Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-content">
+        <div class="container animate">
+            <img src="{{ url_for('static', filename='img/doctor.jpeg') }}" alt="Doctor" class="doctor-img">
+            <h2>🩺 AI Symptom Checker</h2>
+            <p class="subtitle">Select your symptoms below and let AI do the diagnosis</p>
+
+            <form action="/predict" method="POST">
+                {% for symptom, icon in {
+                    'Fever': 'fever.png',
+                    'Cough': 'cough.jpeg',
+                    'Fatigue': 'fatigue.jpeg',
+                    'Headache': 'headache.png',
+                    'Sore Throat': 'sore_throat.png',
+                    'Runny Nose': 'runny_nose.png',
+                    'Nausea': 'nausea.png',
+                    'Diarrhea': 'diarrhea.png'
+                }.items() %}
+                    <label class="checkbox">
+                        <input type="checkbox" name="{{ symptom }}">
+                        <img src="{{ url_for('static', filename='img/' + icon) }}" class="icon"> {{ symptom }}
+                    </label>
+                {% endfor %}
+
+                <button type="submit">🔍 Predict</button>
+            </form>
+            
+            {% if prediction_text %}
+                <div class="result animate">🧬 {{ prediction_text }}</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Designed by <strong>Jaan</strong>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
